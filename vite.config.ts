@@ -12,15 +12,8 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     sourcemap: mode === "development",
-    build: {
-      minify: "terser",
-    }
+    minify: "esbuild", // remove terser and use Vite default
 
-    terserOptions: {
-      compress: {
-        drop_console: mode === "production",
-      },
-    },
     rollupOptions: {
       output: {
         manualChunks: {
