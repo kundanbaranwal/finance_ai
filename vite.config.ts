@@ -12,7 +12,10 @@ export default defineConfig(({ mode }) => ({
   build: {
     outDir: "dist",
     sourcemap: mode === "development",
-    minify: "terser",
+    build: {
+      minify: "terser",
+    }
+
     terserOptions: {
       compress: {
         drop_console: mode === "production",
